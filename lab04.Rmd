@@ -1,0 +1,76 @@
+---
+title: "Lab 04"
+subtitle: "due Sat Feb 13 at 11:59 PM "
+author: ""
+editor_options: 
+  chunk_output_type: console
+output:
+  pdf_document: default
+---
+
+```{r load-packages, message = FALSE, warning = FALSE}
+library(tidyverse)
+library(sf)
+``` 
+
+```{r load-data, message = FALSE}
+fl_votes <- st_read("~/fl_votes.shp")
+```
+
+# Exercise 1
+
+Is the `fl_votes` data "tidy"? Answer here.
+
+# Exercise 2
+
+```{r add-winner, eval = FALSE}
+fl_votes <- fl_votes %>%
+  mutate(winner20 = if_else(______, "Donald Trump", "Joe Biden"))
+```
+
+# Exercise 3
+
+```{r fl-plot-1, eval = FALSE}
+ggplot(fl_votes) +
+  geom_sf(aes(fill = ______)) + 
+  # adjust the color here
+  # add a theme if you want here
+```
+
+# Exercise 4
+
+```{r fl-props, eval = FALSE}
+fl_votes <- fl_votes %>%
+  mutate(prop_rep16 = ______,
+         prop_rep20 = ______))
+```
+
+# Exercise 5
+
+```{r fl-plot-2, eval = FALSE}
+ggplot(fl_votes) + 
+  geom_sf(aes(fill = ______)) + 
+  # adjust the color here
+  # add a theme if you want here
+```
+
+# Exercise 6
+
+```{r fl-change, eval = FALSE}
+fl_votes <- fl_votes %>%
+  mutate(diff_rep = ______)
+```
+
+# Exercise 7
+
+```{r fl-plot-3, eval = FALSE}
+ggplot(fl_votes) +
+  geom_sf(aes(fill = ______)) + 
+  # adjust the color here
+  # add a theme if you want here
+```
+
+# Exercise 8
+
+What do the visualizations you developed tell you about the 2016 and 2020 
+Presidential election in Florida?
